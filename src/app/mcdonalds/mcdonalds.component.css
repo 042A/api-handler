@@ -1,0 +1,18 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-card {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.example-headers {
+  padding: 20px;
+}

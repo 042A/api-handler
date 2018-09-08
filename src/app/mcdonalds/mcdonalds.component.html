@@ -1,0 +1,41 @@
+
+
+<mat-card class="example-card">
+    <mat-card-title>Jobb för alla invandrerer</mat-card-title>
+    <mat-card-content>
+
+        <mat-accordion class="example-headers-align">
+        <mat-expansion-panel *ngFor="let mcdonald of mcdonalds">
+          <mat-expansion-panel-header class="example-headers">
+            <mat-panel-title>
+
+                {{ mcdonald.arbetsplatsnamn }} {{ mcdonald.yrkesbenamning }} {{ mcdonald.kommunnamn }}
+
+            </mat-panel-title>
+            <mat-panel-description>{{ mcdonald.sista_ansokningsdag }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{ mcdonald.arbetsplatsnamn }}</p>
+          <p>{{ mcdonald.kommunnamn }}</p>
+          <p>{{ mcdonald.annonsid }}</p>
+
+          <a href="{{ mcdonald.annonsurl }}"
+          type="submit"
+          mat-raised-button color="primary"
+          matBadge="8"
+          matBadgePosition="before"
+          matBadgeColor="accent">
+          Sök jobbet
+          </a>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-card-content>
+</mat-card>
+
+
+
+
+

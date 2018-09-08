@@ -1,0 +1,29 @@
+<h2>External API-CALLER</h2>
+<!--
+USES
+{{ todos.id | json }}
+{{ todos.userId | json }}
+{{ todos.title | json }}
+*ngFor="let todo of todos"
+{{ todo.title }}
+ -->
+
+<table>
+  <tr>
+    <th style="text-align: left;">
+      <strong>test</strong>test
+    </th>
+  </tr>
+  <tr *ngFor="let todo of todos">
+    <td>
+     {{ todo.title  }}
+    </td>
+    <td>
+     {{ todo.id  }}
+    </td>
+    <td>
+      {{ todo.userId  }}
+    </td>
+  </tr>
+</table>
+
