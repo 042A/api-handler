@@ -1,5 +1,9 @@
+
+
 <div class="example-container mat-elevation-z8">
-    <div class="example-loading-shade"
+
+
+  <div class="example-loading-shade"
          *ngIf="isLoadingResults || isRateLimitReached">
       <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
       <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
@@ -9,32 +13,36 @@
 
     <div class="example-table-container">
 
-      <table mat-table [dataSource]="data" class="example-table"
-             matSort matSortActive="created" matSortDisableClear matSortDirection="asc">
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+
+
+        <table mat-table [dataSource]="mcdonalds" class="example-table">
         <!-- Number Column -->
-        <ng-container matColumnDef="number">
-          <th mat-header-cell *matHeaderCellDef>#</th>
-          <td mat-cell *matCellDef="let row">{{row.number}}</td>
+        <ng-container matColumnDef="arbetsplatsnamn">
+          <th mat-header-cell *matHeaderCellDef>arbetsplatsnamn</th>
+          <td mat-cell *matCellDef="let row">{{row.arbetsplatsnamn}}</td>
         </ng-container>
 
         <!-- Title Column -->
-        <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef>Title</th>
-          <td mat-cell *matCellDef="let row">{{row.title}}</td>
+        <ng-container matColumnDef="kommunnamn">
+          <th mat-header-cell *matHeaderCellDef>kommunnamn</th>
+          <td mat-cell *matCellDef="let row">{{row.kommunnamn}}</td>
         </ng-container>
 
         <!-- State Column -->
-        <ng-container matColumnDef="state">
-          <th mat-header-cell *matHeaderCellDef>State</th>
-          <td mat-cell *matCellDef="let row">{{row.state}}</td>
+        <ng-container matColumnDef="yrkesbenamning">
+          <th mat-header-cell *matHeaderCellDef>yrkesbenamning</th>
+          <td mat-cell *matCellDef="let row">{{row.yrkesbenamning}}</td>
         </ng-container>
 
         <!-- Created Column -->
-        <ng-container matColumnDef="created">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
-            Created
+        <ng-container matColumnDef="annonsid">
+          <th mat-header-cell *matHeaderCellDef disableClear>
+              annonsid
           </th>
-          <td mat-cell *matCellDef="let row">{{row.created_at | date}}</td>
+          <td mat-cell *matCellDef="let row">{{row.annonsid}}</td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -42,5 +50,52 @@
       </table>
     </div>
 
-    <mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator>
+
   </div>
+
+
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+
+<!--
+<h2 matTooltip="Mest för invandrers" matTooltipPosition="before">Jobb för alla!</h2>
+<mat-card class="example-card">
+
+    <mat-card-content>
+
+        <mat-accordion class="example-headers-align">
+        <mat-expansion-panel *ngFor="let mcdonald of mcdonalds">
+          <mat-expansion-panel-header class="example-headers">
+            <mat-panel-title>
+
+                {{ mcdonald.arbetsplatsnamn }} {{ mcdonald.yrkesbenamning }} {{ mcdonald.kommunnamn }}
+
+            </mat-panel-title>
+            <mat-panel-description>{{ mcdonald.sista_ansokningsdag }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{ mcdonald.arbetsplatsnamn }}</p>
+          <p>{{ mcdonald.kommunnamn }}</p>
+          <p>{{ mcdonald.annonsid }}</p>
+
+          <a href="{{ mcdonald.annonsurl }}"
+          type="submit"
+          mat-raised-button color="primary"
+          matBadge="8"
+          matBadgePosition="before"
+          matBadgeColor="accent">
+          Sök jobbet
+          </a>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-card-content>
+</mat-card> -->
+
+
+
+
+

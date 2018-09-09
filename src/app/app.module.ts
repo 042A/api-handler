@@ -6,6 +6,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 /* AngularFire */
 import { AngularFireModule } from 'angularfire2';
@@ -167,3 +168,4 @@ const appRoutes: Routes = [
 
 
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
