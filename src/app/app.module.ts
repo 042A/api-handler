@@ -74,12 +74,15 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { importExpr, importType } from '@angular/compiler/src/output/output_ast';
+import { PageFourComponent } from './page-four/page-four.component';
+import { DataTableComponent, DialogOverviewExample2, DialogOverviewExampleDialog2,  } from './data-table/data-table.component';
 
 
 const appRoutes: Routes = [
   { path: 'page-one/page-one', component: PageOneComponent },
   { path: 'page-two/page-two', component: PageTwoComponent },
   { path: 'page-three/page-three', component: PageThreeComponent },
+  { path: 'page-four/page-four', component: PageFourComponent }
 ];
 
 
@@ -95,11 +98,16 @@ const appRoutes: Routes = [
     PageThreeComponent,
     AddObjectComponent,
     DialogOverviewExampleDialog,
-    McdonaldsComponent
+    McdonaldsComponent,
+    PageFourComponent,
+    DataTableComponent,
+    DialogOverviewExample2,
+    DialogOverviewExampleDialog2
   ],
   entryComponents: [
     AddObjectComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    DialogOverviewExampleDialog2
   ],
   imports: [
     BrowserModule,
@@ -151,6 +159,7 @@ const appRoutes: Routes = [
   ],
   providers: [ApiCallService, TaskService, McdonaldsService],
   bootstrap: [AppComponent],
+  exports: [PageFourComponent],
 })
 
 
