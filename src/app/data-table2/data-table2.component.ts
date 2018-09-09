@@ -19,26 +19,14 @@ export class DataTable2Component implements OnInit {
   displayedColumns: string[] = ['annonsid', 'yrkesbenamning', 'arbetsplatsnamn', 'kommunnamn'];
   apiUrl = 'https://api.arbetsformedlingen.se/af/v0/platsannonser/matchning?nyckelord=mc%20donalds&sida=1&antalrader=20';
   mcdonalds: Matchningsdata[];
-  resultsLength = 0;
-
-
-
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getMcDonalds();
-
   }
 
-
-
-  showMcdonalds(): void {
-    this.getMcDonalds();
-  }
-
-  getMcDonalds(): Observable<AfApi[]> {
-
+  getMcDonalds(): void {
     const href = 'https://api.arbetsformedlingen.se/af/v0/platsannonser/matchning';
     const requestUrl =
     `${href}?nyckelord=mc%20donalds&sida=1&antalrader=40`;
@@ -48,20 +36,8 @@ export class DataTable2Component implements OnInit {
     const subscribe2 = httpFunction
      .pipe(map(res => res['matchningslista'].matchningdata))
      .subscribe(mcdonalds => this.mcdonalds = mcdonalds);
-    return httpFunction.pipe(map(res => res['matchningslista'].matchningdata));
-  }
 
-/*   getMcdonalds(): void {
-      this.getUser()
-    .subscribe(mcdonalds => this.mcdonalds = mcdonalds);
-  }
-
-  getUser(): Observable<AfApi[]> {
-    const cjData = this.http.get(this.apiUrl);
-    return cjData.pipe(map(res => res['matchningslista'].matchningdata));
-  } */
-
-}
+  } }
 
 export class AfApi {
   matchningslista: {
@@ -71,9 +47,7 @@ export class AfApi {
     antal_platserTotal:	number;
     antal_sidor: number;
     matchningsdata: Matchningsdata[];
-  };
-}
-
+  }; }
 export class Matchningsdata {
   annonsid:	string;
   annonsrubrik:	string;
