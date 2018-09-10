@@ -170,9 +170,8 @@ const appRoutes: Routes = [
   ],
   providers: [ApiCallService, TaskService, McdonaldsService],
   bootstrap: [AppComponent],
-  exports: [PageFourComponent],
+  exports: [],
 })
 
 
 export class AppModule { }
-platformBrowserDynamic().bootstrapModule(AppModule);
