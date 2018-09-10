@@ -23,7 +23,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 /* Components */
 import { AppComponent } from './app.component';
-import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { NameComponent } from './name/name.component';
 import { ApiCallerComponent } from './api-caller/api-caller.component';
 import { ApiCallService } from 'src/app/api-call/api-call.service';
@@ -78,6 +77,10 @@ import { importExpr, importType } from '@angular/compiler/src/output/output_ast'
 import { PageFourComponent } from './page-four/page-four.component';
 import { DataTableComponent, DialogOverviewExample2, DialogOverviewExampleDialog2,  } from './data-table/data-table.component';
 import { DataTable2Component } from './data-table2/data-table2.component';
+import { HeroMainComponent } from './hero-main/hero-main.component';
+import { PageFiveComponent } from './page-five/page-five.component';
+import { HeroesComponent } from './hero-main/heroes/heroes.component';
+import { HeroDetailComponent } from './hero-main/hero-detail/hero-detail.component';
 
 
 const appRoutes: Routes = [
@@ -85,7 +88,8 @@ const appRoutes: Routes = [
   { path: 'page-two/page-two', component: PageTwoComponent },
   { path: 'page-three/page-three', component: PageThreeComponent },
   { path: 'page-four/page-four', component: PageFourComponent },
-  { path: 'data-table2/data-table2', component: DataTable2Component }
+  { path: 'data-table2/data-table2', component: DataTable2Component },
+  { path: 'page-five/page-five', component: PageFiveComponent }
 ];
 
 
@@ -93,7 +97,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MyNavbarComponent,
-    MyDashboardComponent,
     NameComponent,
     ApiCallerComponent,
     PageOneComponent,
@@ -106,7 +109,11 @@ const appRoutes: Routes = [
     DataTableComponent,
     DialogOverviewExample2,
     DialogOverviewExampleDialog2,
-    DataTable2Component
+    DataTable2Component,
+    HeroMainComponent,
+    PageFiveComponent,
+    HeroesComponent,
+    HeroDetailComponent
   ],
   entryComponents: [
     AddObjectComponent,
